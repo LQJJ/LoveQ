@@ -33,9 +33,6 @@ class IQNavigationController: UINavigationController {
 
 }
 
-public func test(){
-    print("ttt")
-}
 
 
 

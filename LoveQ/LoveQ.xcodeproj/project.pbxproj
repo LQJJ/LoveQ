@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABB43FD91D7A821500E83E3A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB43FCF1D7A821500E83E3A /* Reachability.m */; };
 		ABD0735F1D7A6F350091F80D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD0735E1D7A6F350091F80D /* AppDelegate.swift */; };
 		ABD073641D7A6F350091F80D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD073621D7A6F350091F80D /* Main.storyboard */; };
 		ABD073661D7A6F350091F80D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD073651D7A6F350091F80D /* Assets.xcassets */; };
@@ -54,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB9BF87A1D7A76490097C92D /* LoveQ-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LoveQ-Bridging-Header.h"; path = "Classes/Others/LoveQ-Bridging-Header.h"; sourceTree = "<group>"; };
+		ABB43FCE1D7A821500E83E3A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		ABB43FCF1D7A821500E83E3A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		ABD0735B1D7A6F350091F80D /* LoveQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD0735E1D7A6F350091F80D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABD073631D7A6F350091F80D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,7 +78,6 @@
 		ABD0739E1D7A6F870091F80D /* AFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
 		ABD0739F1D7A6F870091F80D /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
 		ABD073A01D7A6F870091F80D /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
-		ABD073A11D7A6F870091F80D /* LoveQ-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LoveQ-Bridging-Header.h"; sourceTree = "<group>"; };
 		ABD073A21D7A6F870091F80D /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
 		ABD073A31D7A6F870091F80D /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		ABD073A41D7A6F870091F80D /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
@@ -116,6 +119,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ABB43FBC1D7A821500E83E3A /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				ABB43FCE1D7A821500E83E3A /* Reachability.h */,
+				ABB43FCF1D7A821500E83E3A /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		ABD073521D7A6F350091F80D = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				ABD0735E1D7A6F350091F80D /* AppDelegate.swift */,
+				AB9BF87A1D7A76490097C92D /* LoveQ-Bridging-Header.h */,
 				ABD0738C1D7A6F870091F80D /* Classes */,
 				ABD073621D7A6F350091F80D /* Main.storyboard */,
 				ABD073651D7A6F350091F80D /* Assets.xcassets */,
@@ -264,6 +277,7 @@
 		ABD0739C1D7A6F870091F80D /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				ABB43FBC1D7A821500E83E3A /* Reachability */,
 				ABD0739D1D7A6F870091F80D /* Source */,
 			);
 			path = Others;
@@ -275,7 +289,6 @@
 				ABD0739E1D7A6F870091F80D /* AFError.swift */,
 				ABD0739F1D7A6F870091F80D /* Alamofire.h */,
 				ABD073A01D7A6F870091F80D /* Alamofire.swift */,
-				ABD073A11D7A6F870091F80D /* LoveQ-Bridging-Header.h */,
 				ABD073A21D7A6F870091F80D /* MultipartFormData.swift */,
 				ABD073A31D7A6F870091F80D /* NetworkReachabilityManager.swift */,
 				ABD073A41D7A6F870091F80D /* Notifications.swift */,
@@ -472,6 +485,7 @@
 				ABD073C01D7A6F870091F80D /* Request.swift in Sources */,
 				ABD073C71D7A6F870091F80D /* TaskDelegate.swift in Sources */,
 				ABD073C61D7A6F870091F80D /* SessionManager.swift in Sources */,
+				ABB43FD91D7A821500E83E3A /* Reachability.m in Sources */,
 				ABD073B81D7A6F870091F80D /* IQMusieViewController.swift in Sources */,
 				ABD073BD1D7A6F870091F80D /* NetworkReachabilityManager.swift in Sources */,
 				ABD073B61D7A6F870091F80D /* IQTabBarController.swift in Sources */,
@@ -640,9 +654,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = LoveQ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lQ.LoveQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/czljcb/Documents/LoveQ/LoveQ/LoveQ/Classes/Others/LoveQ-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -654,9 +670,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = LoveQ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lQ.LoveQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/czljcb/Documents/LoveQ/LoveQ/LoveQ/Classes/Others/LoveQ-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

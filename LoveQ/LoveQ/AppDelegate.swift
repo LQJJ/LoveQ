@@ -12,16 +12,57 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    
+    // **********************************************************************************
+    // MARK: - < 网络监听 >
+    ///
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-
-        window = UIWindow(frame: UIScreen.main.bounds)
+    private func setReachabilityChangedNotification()
+    {
         
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChangedNotification(noti:)), name: NSNotification.Name.reachabilityChanged, object: nil)
+    }
+
+    @objc private func reachabilityChangedNotification(noti:NSNotification){
+        let status = Reachability.forInternetConnection()
+        
+        if status?.currentReachabilityStatus() == NotReachable {
+            
+            let alert  =  UIAlertController(title: "我疯移动数据已关闭", message: "打开我疯移动数据或使用无线据以往来访问数据", preferredStyle: .alert)
+            let setAction = UIAlertAction(title: "设置", style: .default, handler: { (set:UIAlertAction) in
+                
+            })
+            alert.addAction(setAction)
+            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: { (set:UIAlertAction) in
+                
+            })
+            alert.addAction(cancelAction)
+            window?.rootViewController?.present(alert, animated: true, completion: nil)
+        }
+
+    }
+    
+    // **********************************************************************************
+    // MARK: - < RootViewController >
+    ///
+    private func setRootViewController(){
+        window = UIWindow(frame: UIScreen.main.bounds)
         let mainVC = IQTabBarController();
         window?.rootViewController = mainVC
         window?.makeKeyAndVisible()
+
+    }
+    
+    // **********************************************************************************
+    // MARK: - < AppDelegate >
+    ///
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+
+        setRootViewController()
+        setReachabilityChangedNotification()
+        
         return true
     }
 

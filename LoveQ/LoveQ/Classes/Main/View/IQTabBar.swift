@@ -10,22 +10,30 @@ import UIKit
 
 class IQTabBar: UITabBar {
     
+    
+    // **********************************************************************************
+    // MARK: - < 懒加载 >
+    ///
     lazy var musicButton:UIButton = {
         var btn = UIButton(type:.custom)
         btn.setImage(UIImage(named: "music"), for: .normal)
+        btn.addTarget(self, action: #selector(musicButtonCilck(btn:)), for: .touchUpInside)
         self.addSubview(btn)
+        
         return btn
     }()
     lazy var musicBg:UIButton = {
         var btn = UIButton(type:.custom)
-        btn.setImage(UIImage(named: "musicbg"), for: .normal)
+        btn.setImage(UIImage(named: "music_bg"), for: .normal)
         self.insertSubview(btn, at: 0)
-
+        
         return btn
     }()
-
- 
     
+    
+    // **********************************************************************************
+    // MARK: - < 系统初次化 >
+    ///
     override init(frame: CGRect) {
         super.init(frame: frame)
         //        let queue =  DispatchQueue(label: "tabbar")
@@ -49,12 +57,7 @@ class IQTabBar: UITabBar {
         let y : CGFloat = 0.0
         let width = frame.width / 5
         let height = frame.height
-        
-        
-        
         for view in subviews {
-            print(view.self)
-            print(shadowImage)
             if view.isKind(of: NSClassFromString("UITabBarButton")!) {
                 
                 view.frame = CGRect(x: x, y: y, width: width, height: height)
@@ -64,12 +67,13 @@ class IQTabBar: UITabBar {
                 }
             }
         }
-        musicBg.frame = CGRect(x: 1.75 * width, y:-30 ,width: 1.5*width, height: 1.5*width)
-        musicButton.frame = CGRect(x: 2 * width, y: -25, width: width, height: width)
-
+        musicBg.frame = CGRect(x: 1.75 * width, y:49 - width - 10 ,width: 1.5*width, height: 1.5*width)
+        musicButton.frame = CGRect(x: 2 * width, y: 49 - width, width: width, height: width)
+        
     }
     
-    // MARK: - Private mot,hod
+    // **********************************************************************************
+    // MARK: - < 私有方法 >
     ///
     private func hiddenShadowImage(){
         UIGraphicsBeginImageContext(frame.size);
@@ -80,12 +84,13 @@ class IQTabBar: UITabBar {
         UIGraphicsEndImageContext();
         backgroundImage = img
         shadowImage = img
-        backgroundColor = UIColor(red: 236.0/256, green: 240.0/256, blue: 241.0/256, alpha: 1.0)//UIColor(colorLiteralRed: 231.0/256, green: 236.0/256, blue: 238.0/256, alpha: 1.0)
+        backgroundColor = UIColor(red: 236.0/256, green: 240.0/256, blue: 241.0/256, alpha: 1.0)
         
+    }
+    //    func musicButtonCilck(){ // 不是private 继承NSObjc 会默认加@objc
+    @objc private func musicButtonCilck(btn : UIButton){
+        print(#function)
     }
     
-    private func prepareMusicButton(){
-        
-    }
     
 }
